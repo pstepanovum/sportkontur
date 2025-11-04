@@ -1,0 +1,209 @@
+// FILE: src/components/ui/sections/footer.tsx
+
+"use client";
+
+import Link from "next/link";
+import { Logo } from "@/components/icons/logo/logo";
+import { Texture } from "@/components/icons/texture/texture";
+import { FooterCredits } from "./footer/footer-credits";
+
+const footerLinks = {
+  company: {
+    title: "Компания",
+    links: [
+      { label: "О нас", href: "/about" },
+      { label: "Наши проекты", href: "/projects" },
+      { label: "Производство", href: "/production" },
+      { label: "Контакты", href: "/contact" },
+    ],
+  },
+  products: {
+    title: "Продукция",
+    links: [
+      { label: "Игровые площадки", href: "/playgrounds" },
+      { label: "Спортивные комплексы", href: "/sports" },
+      { label: "Уличные тренажеры", href: "/equipment" },
+      { label: "Безопасные покрытия", href: "/surfaces" },
+    ],
+  },
+  services: {
+    title: "Услуги",
+    links: [
+      { label: "Проектирование", href: "/design" },
+      { label: "Монтаж", href: "/installation" },
+      { label: "Гарантийное обслуживание", href: "/warranty" },
+      { label: "Сертификаты", href: "/certificates" },
+    ],
+  },
+  info: {
+    title: "Информация",
+    links: [
+      { label: "Каталог", href: "/catalog" },
+      { label: "Цены", href: "/pricing" },
+      { label: "Доставка", href: "/delivery" },
+      { label: "Документация", href: "/docs" },
+    ],
+  },
+};
+
+export default function Footer() {
+  const currentYear = new Date().getFullYear();
+
+  return (
+    <footer className="relative bg-white">
+      {/* Main Footer Content */}
+      <div className="relative overflow-hidden">
+        {/* Texture Background Pattern - Grid of dots */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            opacity: 0.5,
+            color: "var(--color-neutral-30)",
+          }}
+        >
+          <div className="grid grid-cols-[repeat(auto-fill,39px)] gap-0 w-full h-full">
+            {Array.from({ length: 500 }).map((_, index) => (
+              <div key={index} className="w-[39px] h-[34px]">
+                <Texture />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Footer Content */}
+        <div className="relative z-10 max-w-7xl mx-auto px-5 md:px-20 py-12">
+          {/* Top Section - Logo and Links */}
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8 mb-12">
+            {/* Logo and Contact Info */}
+            <div className="col-span-2 md:col-span-3 lg:col-span-1 mb-8 lg:mb-0">
+              <Logo width={100} height={34} />
+              <div className="mt-4 space-y-2">
+                <a
+                  href="mailto:info@sportkontur.ru"
+                  className="block text-sm hover:opacity-70"
+                  style={{ color: "var(--color-neutral-100)" }}
+                >
+                  info@sportkontur.ru
+                </a>
+                <a
+                  href="tel:+79001234567"
+                  className="block text-sm hover:opacity-70"
+                  style={{ color: "var(--color-neutral-100)" }}
+                >
+                  +7 (900) 123-45-67
+                </a>
+              </div>
+            </div>
+
+            {/* Company */}
+            <div>
+              <h3
+                className="font-semibold mb-4"
+                style={{ color: "var(--color-neutral-100)" }}
+              >
+                {footerLinks.company.title}
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.company.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm hover:opacity-70"
+                      style={{ color: "var(--color-neutral-60)" }}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Products */}
+            <div>
+              <h3
+                className="font-semibold mb-4"
+                style={{ color: "var(--color-neutral-100)" }}
+              >
+                {footerLinks.products.title}
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.products.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm hover:opacity-70"
+                      style={{ color: "var(--color-neutral-60)" }}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Services */}
+            <div>
+              <h3
+                className="font-semibold mb-4"
+                style={{ color: "var(--color-neutral-100)" }}
+              >
+                {footerLinks.services.title}
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.services.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm hover:opacity-70"
+                      style={{ color: "var(--color-neutral-60)" }}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Info */}
+            <div>
+              <h3
+                className="font-semibold mb-4"
+                style={{ color: "var(--color-neutral-100)" }}
+              >
+                {footerLinks.info.title}
+              </h3>
+              <ul className="space-y-3">
+                {footerLinks.info.links.map((link) => (
+                  <li key={link.href}>
+                    <Link
+                      href={link.href}
+                      className="text-sm hover:opacity-70"
+                      style={{ color: "var(--color-neutral-60)" }}
+                    >
+                      {link.label}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom Section - Copyright */}
+          <div
+            className="pt-8"
+          >
+            <p
+              className="text-sm text-center md:text-left"
+              style={{ color: "var(--color-neutral-60)" }}
+            >
+              © {currentYear} Спорт Контур. Все права защищены.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      {/* Footer Credits */}
+      <FooterCredits />
+    </footer>
+  );
+}

@@ -1,0 +1,15 @@
+/* FILE: src/styles/animations.css */
+
+/* Moving text animation - left to right */
+@keyframes scroll {
+  0% {
+    transform: translateX(-10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 60s linear infinite;
+}

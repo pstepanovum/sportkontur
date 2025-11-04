@@ -1,0 +1,85 @@
+/* FILE: src/styles/colors.css */
+
+/* ===================================
+   Primary Color - Brand Green
+   =================================== */
+:root {
+  /* Main Green #54B588 (PANTONE: P 136-5 C) */
+  --color-primary-main: #54b588;
+  --color-primary-hover: #46a078;
+  --color-primary-pressed: #2d6b51;
+  --color-primary-surface: #f0faf5;
+  --color-primary-border: #c8e9da;
+  --color-primary-focus: #54b588;
+
+  /* ===================================
+     Secondary Color - Charcoal Gray
+     =================================== */
+  /* Charcoal #59595F (PANTONE: P 173-14 C) */
+  --color-secondary-main: #59595f;
+  --color-secondary-hover: #48484d;
+  --color-secondary-pressed: #2d2d30;
+  --color-secondary-surface: #f5f5f6;
+  --color-secondary-border: #d1d1d3;
+  --color-secondary-focus: #b8b8bc;
+
+  /* ===================================
+     Warning - Yellow
+     =================================== */
+  --color-warning-main: #ffd33c;
+  --color-warning-hover: #d5b032;
+  --color-warning-pressed: #806a1e;
+  --color-warning-surface: #fff6d8;
+  --color-warning-border: #fff0be;
+  --color-warning-focus: #fff6d8;
+
+  /* ===================================
+     Success - Green
+     =================================== */
+  --color-success-main: #50cd89;
+  --color-success-hover: #46b277;
+  --color-success-pressed: #28593f;
+  --color-success-surface: #f2fff8;
+  --color-success-border: #c5eed8;
+  --color-success-focus: #dcf5e7;
+
+  /* ===================================
+     Error - Red
+     =================================== */
+  --color-error-main: #f14141;
+  --color-error-hover: #d93a3a;
+  --color-error-pressed: #802a2a;
+  --color-error-surface: #fff2f2;
+  --color-error-border: #fac0c0;
+  --color-error-focus: #fcd9d9;
+
+  /* ===================================
+     Info - Purple
+     =================================== */
+  --color-info-main: #7239ea;
+  --color-info-hover: #6633d1;
+  --color-info-pressed: #3f2478;
+  --color-info-surface: #f6f2ff;
+  --color-info-border: #d0bdf8;
+  --color-info-focus: #e3d7fb;
+
+  /* ===================================
+     Neutral - Grayscale
+     =================================== */
+  --color-neutral-10: #ffffff; /* Brand White (PANTONE: 000C White) */
+  --color-neutral-20: #f5f5f5;
+  --color-neutral-30: #ededed;
+  --color-neutral-40: #d6d6d6;
+  --color-neutral-50: #c2c2c2;
+  --color-neutral-60: #878787;
+  --color-neutral-70: #606060;
+  --color-neutral-80: #383838;
+  --color-neutral-90: #403a3a;
+  --color-neutral-100: #101010;
+
+  /* ===================================
+     Additional Colors
+     =================================== */
+  --color-border-light: #ededed;
+  --color-text-muted: #5f5f5f;
+}
