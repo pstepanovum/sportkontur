@@ -26,7 +26,7 @@ export function FeatureCard({
       <div className="p-6 md:p-8">
         <div className="flex items-center gap-3 mb-3">
           <Icon
-            className="w-6 h-6 flex-shrink-0"
+            className="w-8 h-8 flex-shrink-0"
             color="var(--color-text-muted)"
           />
           <h3
@@ -66,8 +66,13 @@ export function FeatureCard({
           </div>
         </div>
 
-        {/* Illustration */}
-        <div className="relative z-10 flex items-center justify-center h-full p-8">
+        {/* Illustration with shadow */}
+        <div
+          className="relative z-10 flex items-center justify-center h-full p-8"
+          style={{
+            filter: "drop-shadow(0 4px 12px rgba(0, 0, 0, 0.08))",
+          }}
+        >
           <Illustration className="w-full h-full max-w-md" />
         </div>
       </div>

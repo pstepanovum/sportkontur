@@ -3,13 +3,17 @@
 "use client";
 
 import Link from "next/link";
-import { Logo } from "@/components/icons/logo/logo";
 import { Button } from "@/components/ui/button";
 
 interface MobileHeaderProps {
   isOpen: boolean;
   onClose: () => void;
-  navLinks: Array<{ label: string; href: string }>;
+  navLinks: Array<{
+    label: string;
+    href: string;
+    hasDropdown?: boolean;
+    dropdownItems?: Array<{ label: string; href: string }>;
+  }>;
 }
 
 export function MobileHeader({ isOpen, onClose, navLinks }: MobileHeaderProps) {
@@ -17,14 +21,8 @@ export function MobileHeader({ isOpen, onClose, navLinks }: MobileHeaderProps) {
 
   return (
     <div className="lg:hidden fixed inset-0 z-50 bg-white">
-      {/* Header with Logo and Close Button - Match exact spacing from main header */}
-      <div className="flex items-center justify-between h-20 px-5 py-4">
-        <div className="flex items-center">
-          <Link href="/" onClick={onClose}>
-            <Logo width={120} height={41} />
-          </Link>
-        </div>
-
+      {/* Header with Close Button only */}
+      <div className="flex items-center justify-end h-20 px-5 py-4">
         {/* Close Button (X) */}
         <button
           onClick={onClose}
@@ -37,14 +35,14 @@ export function MobileHeader({ isOpen, onClose, navLinks }: MobileHeaderProps) {
       </div>
 
       {/* Menu Content */}
-      <div className="flex flex-col h-[calc(100vh-5rem)] justify-between px-8 py-8">
-        {/* Navigation Links */}
-        <nav className="flex flex-col gap-6">
+      <div className="flex flex-col h-[calc(100vh-5rem)] justify-between px-5 py-8">
+        {/* Navigation Links - Left aligned */}
+        <nav className="flex flex-col gap-1">
           {navLinks.map((link) => (
             <Link
               key={link.href}
               href={link.href}
-              className="text-2xl font-semibold"
+              className="text-3xl font-semibold py-2"
               style={{ color: "var(--color-neutral-100)" }}
               onClick={onClose}
             >
@@ -54,17 +52,17 @@ export function MobileHeader({ isOpen, onClose, navLinks }: MobileHeaderProps) {
         </nav>
 
         {/* Bottom CTA Section */}
-        <div className="flex flex-col gap-4 pb-8">
+        <div className="flex flex-col gap-4">
           <Link
-            href="/login"
+            href="/consultation"
             className="text-center font-medium text-lg py-3"
             style={{ color: "var(--color-neutral-100)" }}
             onClick={onClose}
           >
-            Login
+            Консультация
           </Link>
-          <Button href="/get-started" size="lg" className="w-full">
-            Get Started
+          <Button href="/request-quote" className="w-full">
+            Запросить расчет
           </Button>
         </div>
       </div>

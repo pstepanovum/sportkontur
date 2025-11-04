@@ -31,51 +31,51 @@ export function DoodleFour({ className = "" }: DoodleFourProps) {
       <path
         d="M245.483 262.962C245.483 253.443 237.211 245.796 226.989 245.796C216.768 245.796 208.496 253.521 208.496 262.962C208.496 269.361 212.242 274.901 217.782 277.866L212.398 307.283L244.312 306.659L236.431 277.71"
         stroke="black"
-        stroke-width="5.00103"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="5.00103"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M328.74 245.562C316.645 243.923 305.096 252.896 300.493 266.474L209.119 262.65C209.821 268.502 211.772 273.262 216.376 275.837L298.542 281.065C299.322 295.267 308.062 306.971 320.078 308.61C334.202 310.561 347.545 297.998 349.964 280.597C352.383 263.196 342.863 247.512 328.74 245.562Z"
         stroke="black"
-        stroke-width="5.00103"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="5.00103"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M335.609 284.031C338.755 284.031 341.305 280.677 341.305 276.54C341.305 272.403 338.755 269.049 335.609 269.049C332.463 269.049 329.913 272.403 329.913 276.54C329.913 280.677 332.463 284.031 335.609 284.031Z"
         stroke="black"
-        stroke-width="5.00103"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="5.00103"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M125.471 190.238C125.393 181.732 132.26 174.71 140.765 174.632C149.27 174.553 156.293 181.42 156.371 189.925"
         stroke="black"
-        stroke-width="5.00103"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="5.00103"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M190.86 189.615C190.782 181.109 197.649 174.087 206.154 174.008C214.659 173.93 221.682 180.797 221.76 189.302"
         stroke="black"
-        stroke-width="5.00103"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="5.00103"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
       <path
         d="M355.662 265.459C364.168 266.708 370.02 274.667 368.771 283.172C367.523 291.677 359.564 297.53 351.058 296.281L355.662 265.459Z"
         fill="#B284B2"
         stroke="#B284B2"
-        stroke-width="20.0041"
-        stroke-miterlimit="10"
-        stroke-linecap="round"
-        stroke-linejoin="round"
+        strokeWidth="20.0041"
+        strokeMiterlimit="10"
+        strokeLinecap="round"
+        strokeLinejoin="round"
       />
     </svg>
   );

@@ -1,25 +1,30 @@
-// FILE: src/app/page.tsx
+// FILE: src/app/contact/page.tsx
 
 import Header from "@/components/ui/sections/header";
-import Hero from "@/components/pages/home/hero";
-import Features from "@/components/pages/home/features";
+import ContactSection from "@/components/pages/contact/contact-form";
+import ContactInfo from "@/components/pages/contact/contact-info";  
 import Footer from "@/components/ui/sections/footer";
 import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper";
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
+import FAQ from "@/components/pages/shared/faq";
 
-export default function Home() {
+export default function ContactPage() {
   return (
     <>
       <Header />
 
       <BlurWrapper>
         <main>
+          <SectionWrapper headerTheme="dark">
+            <ContactSection />
+          </SectionWrapper>
+
           <SectionWrapper headerTheme="light">
-            <Hero />
+            <ContactInfo />
           </SectionWrapper>
 
           <SectionWrapper headerTheme="dark">
-            <Features />
+            <FAQ />
           </SectionWrapper>
 
           <Footer />

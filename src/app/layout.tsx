@@ -3,6 +3,7 @@
 import type { Metadata } from "next";
 import { Inter, Dela_Gothic_One } from "next/font/google";
 import { HeaderThemeProvider } from "@/contexts/header-theme-context";
+import { BlurOverlayProvider } from "@/contexts/blur-overlay-context";
 import "./globals.css";
 
 const inter = Inter({
@@ -32,7 +33,9 @@ export default function RootLayout({
         className={`${inter.variable} ${delaGothicOne.variable} antialiased font-sans`}
         style={{ fontFamily: "var(--font-inter)" }}
       >
-        <HeaderThemeProvider>{children}</HeaderThemeProvider>
+        <HeaderThemeProvider>
+          <BlurOverlayProvider>{children}</BlurOverlayProvider>
+        </HeaderThemeProvider>
       </body>
     </html>
   );

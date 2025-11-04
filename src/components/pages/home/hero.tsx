@@ -12,7 +12,7 @@ export default function Hero() {
   ];
 
   return (
-    <section className="min-h-screen w-full flex flex-col justify-between pt-[162px] md:pt-[146px] relative">
+    <section className="min-h-screen w-full flex flex-col justify-between pt-[120px] md:pt-[260px] relative">
       {/* Background Image with overlay and blur */}
       <div
         className="absolute inset-0 w-full h-full"
