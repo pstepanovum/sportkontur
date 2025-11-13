@@ -4,6 +4,7 @@ import type { Metadata } from "next";
 import { Inter, Dela_Gothic_One } from "next/font/google";
 import { HeaderThemeProvider } from "@/contexts/header-theme-context";
 import { BlurOverlayProvider } from "@/contexts/blur-overlay-context";
+import { ModalLockProvider } from "@/contexts/modal-lock-context";
 import "./globals.css";
 
 const inter = Inter({
@@ -34,7 +35,9 @@ export default function RootLayout({
         style={{ fontFamily: "var(--font-inter)" }}
       >
         <HeaderThemeProvider>
-          <BlurOverlayProvider>{children}</BlurOverlayProvider>
+          <BlurOverlayProvider>
+            <ModalLockProvider>{children}</ModalLockProvider>
+          </BlurOverlayProvider>
         </HeaderThemeProvider>
       </body>
     </html>

@@ -6,6 +6,9 @@ import Features from "@/components/pages/home/features";
 import Footer from "@/components/ui/sections/footer";
 import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper";
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
+import Certificates from "@/components/pages/home/certificates";
+import FAQ from "@/components/pages/shared/faq";
+import CTA from "@/components/ui/sections/cta";
 
 export default function Home() {
   return (
@@ -22,6 +25,15 @@ export default function Home() {
             <Features />
           </SectionWrapper>
 
+          <SectionWrapper headerTheme="dark">
+            <Certificates />
+          </SectionWrapper>
+
+          <SectionWrapper headerTheme="dark">
+            <FAQ />
+          </SectionWrapper>
+          
+          <CTA />
           <Footer />
         </main>
       </BlurWrapper>

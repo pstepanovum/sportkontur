@@ -7,6 +7,7 @@ import Footer from "@/components/ui/sections/footer";
 import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper";
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import FAQ from "@/components/pages/shared/faq";
+import CTA from "@/components/ui/sections/cta";
 
 export default function ContactPage() {
   return (
@@ -27,6 +28,7 @@ export default function ContactPage() {
             <FAQ />
           </SectionWrapper>
 
+          <CTA />
           <Footer />
         </main>
       </BlurWrapper>

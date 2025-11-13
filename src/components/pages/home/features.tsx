@@ -2,10 +2,10 @@
 
 import { FeatureCard } from "./features/feature-card";
 import { Badge } from "@/components/ui/badge";
-import { BoltIcon } from "@/components/icons/texture/stripe/bolt";
-import { CrownIcon } from "@/components/icons/texture/stripe/crown";
-import { SmileIcon } from "@/components/icons/texture/stripe/smile";
-import { SmileyLoveIcon } from "@/components/icons/texture/stripe/smiley-love";
+import { BoltIcon } from "@/components/icons/texture/urban/bolt";
+import { CrownIcon } from "@/components/icons/texture/urban/crown";
+import { SmileIcon } from "@/components/icons/texture/urban/smile";
+import { SmileyLoveIcon } from "@/components/icons/texture/urban/smiley-love";
 import { DoodleOne } from "@/components/icons/texture/illustration/doodle-one";
 import { DoodleTwo } from "@/components/icons/texture/illustration/doodle-two";
 import { DoodleThree } from "@/components/icons/texture/illustration/doodle-three";

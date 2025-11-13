@@ -2,7 +2,6 @@
 
 "use client";
 
-import { useState } from "react";
 import { ChevronDown } from "@/components/icons/chevron-down";
 import { ChevronUp } from "@/components/icons/chevron-up";
 import { Texture } from "@/components/icons/texture/texture";
@@ -10,16 +9,11 @@ import { Texture } from "@/components/icons/texture/texture";
 interface FaqItemProps {
   question: string;
   answer: string;
-  defaultOpen?: boolean;
+  isOpen: boolean;
+  onToggle: () => void;
 }
 
-export function FaqItem({
-  question,
-  answer,
-  defaultOpen = false,
-}: FaqItemProps) {
-  const [isOpen, setIsOpen] = useState(defaultOpen);
-
+export function FaqItem({ question, answer, isOpen, onToggle }: FaqItemProps) {
   return (
     <div
       className="rounded-[24px] overflow-hidden transition-all duration-300 relative"
@@ -50,7 +44,7 @@ export function FaqItem({
       )}
 
       <button
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={onToggle}
         className="relative w-full px-6 md:px-6 py-6 flex justify-between text-left transition-colors duration-300"
         style={{ alignItems: "center" }}
       >

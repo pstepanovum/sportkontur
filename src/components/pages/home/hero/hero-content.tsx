@@ -1,9 +1,8 @@
 // FILE: src/components/pages/home/hero/hero-content.tsx
 
 import { Button } from "@/components/ui/button";
-import { ButtonOutline } from "@/components/ui/button-outline";
 import { Badge } from "@/components/ui/badge";
-import { SmileyLoveIcon } from "@/components/icons/texture/stripe/smiley-love";
+import { SmileyLoveIcon } from "@/components/icons/texture/urban/smiley-love";
 
 export function HeroContent() {
   return (
@@ -31,15 +30,15 @@ export function HeroContent() {
 
       {/* Buttons */}
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <Button
-          variant="white"
-          size="md"
-          href="/catalog"
-          iconTrailing={false}
-        >
+        <Button variant="white" size="md" href="/catalog" iconTrailing={false}>
           Смотреть каталог
         </Button>
-        <Button variant="primary" size="md" href="/contact" iconTrailing={false}>
+        <Button
+          variant="primary"
+          size="md"
+          href="/contact"
+          iconTrailing={false}
+        >
           Связаться с нами
         </Button>
       </div>

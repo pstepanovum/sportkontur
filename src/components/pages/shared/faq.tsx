@@ -1,8 +1,11 @@
 // FILE: src/components/pages/shared/faq/faq.tsx
 
+"use client";
+
+import { useState } from "react";
 import { Badge } from "@/components/ui/badge";
 import { FaqItem } from "./faq/faq-item";
-import { BoltIcon } from "@/components/icons/texture/stripe/bolt";
+import { BoltIcon } from "@/components/icons/texture/urban/bolt";
 
 const faqs = [
   {
@@ -43,10 +46,14 @@ const faqs = [
 ];
 
 export default function Faq() {
+  const [openIndex, setOpenIndex] = useState<number | null>(0);
+
+  const handleToggle = (index: number) => {
+    setOpenIndex(openIndex === index ? null : index);
+  };
+
   return (
-    <section
-      className="w-full py-6 md:py-14 bg-white"
-    >
+    <section className="w-full py-6 md:py-14 bg-white">
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
@@ -84,7 +91,8 @@ export default function Faq() {
                 key={index}
                 question={faq.question}
                 answer={faq.answer}
-                defaultOpen={index === 0}
+                isOpen={openIndex === index}
+                onToggle={() => handleToggle(index)}
               />
             ))}
           </div>
