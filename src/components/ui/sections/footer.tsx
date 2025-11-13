@@ -12,35 +12,35 @@ const footerLinks = {
     title: "Компания",
     links: [
       { label: "О нас", href: "/about" },
-      { label: "Наши проекты", href: "/projects" },
-      { label: "Производство", href: "/production" },
+      { label: "Наша команда", href: "/about/team" },
       { label: "Контакты", href: "/contact" },
     ],
   },
   products: {
-    title: "Продукция",
+    title: "Каталог",
     links: [
-      { label: "Игровые площадки", href: "/playgrounds" },
-      { label: "Спортивные комплексы", href: "/sports" },
-      { label: "Уличные тренажеры", href: "/equipment" },
-      { label: "Безопасные покрытия", href: "/surfaces" },
+      { label: "Все товары", href: "/catalog" },
+      { label: "Игровые площадки", href: "/catalog/playgrounds" },
+      { label: "Спортивное оборудование", href: "/catalog/sports" },
+      { label: "Уличная мебель", href: "/catalog/furniture" },
+      { label: "Покрытия", href: "/catalog/surfaces" },
     ],
   },
-  services: {
-    title: "Услуги",
+  projects: {
+    title: "Проекты",
     links: [
-      { label: "Проектирование", href: "/design" },
-      { label: "Монтаж", href: "/installation" },
-      { label: "Гарантийное обслуживание", href: "/warranty" },
-      { label: "Сертификаты", href: "/certificates" },
+      { label: "Детские сады", href: "/projects/kindergartens" },
+      { label: "Школы", href: "/projects/schools" },
+      { label: "Парки", href: "/projects/parks" },
+      { label: "Жилые комплексы", href: "/projects/residential" },
     ],
   },
   info: {
     title: "Информация",
     links: [
-      { label: "Каталог", href: "/catalog" },
       { label: "Цены", href: "/pricing" },
       { label: "Доставка", href: "/delivery" },
+      { label: "Гарантия", href: "/warranty" },
       { label: "Документация", href: "/docs" },
     ],
   },
@@ -141,16 +141,16 @@ export default function Footer() {
               </ul>
             </div>
 
-            {/* Services */}
+            {/* Projects */}
             <div>
               <h3
                 className="font-semibold mb-4"
                 style={{ color: "var(--color-neutral-100)" }}
               >
-                {footerLinks.services.title}
+                {footerLinks.projects.title}
               </h3>
               <ul className="space-y-3">
-                {footerLinks.services.links.map((link) => (
+                {footerLinks.projects.links.map((link) => (
                   <li key={link.href}>
                     <Link
                       href={link.href}

@@ -15,26 +15,24 @@ interface ProductCardProps {
 export function ProductCard({ product }: ProductCardProps) {
   return (
     <div
-      className="rounded-2xl overflow-hidden transition-all duration-300 hover:shadow-lg"
+      className="rounded-2xl overflow-hidden transition-all duration-300 hover:opacity-80"
       style={{
         border: "1.5px solid var(--color-border-light)",
       }}
     >
       {/* Product Image */}
       <div
-        className="relative h-64 bg-gradient-to-br overflow-hidden"
+        className="relative h-64 bg-cover bg-center overflow-hidden"
         style={{
-          background: "linear-gradient(135deg, var(--color-primary-surface) 0%, var(--color-neutral-20) 100%)",
+          backgroundImage: "url(/images/hero-playground.jpg)",
         }}
       >
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div
-            className="text-6xl"
-            style={{ color: "var(--color-neutral-40)" }}
-          >
-            🏗️
-          </div>
-        </div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundColor: "rgba(84, 181, 136, 0.15)",
+          }}
+        />
       </div>
 
       {/* Product Info */}
