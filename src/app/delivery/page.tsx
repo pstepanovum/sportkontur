@@ -3,7 +3,7 @@
 import Header from "@/components/ui/sections/header";
 import Footer from "@/components/ui/sections/footer";
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
-import SectionWrapper from "@/components/ui/sections/section-wrapper";
+import SectionWrapper from "@/components/ui/sections/helper/section-wrapper";
 import { PageHero } from "@/components/pages/shared/page-hero";
 import { TruckIcon } from "@/components/icons/truck";
 

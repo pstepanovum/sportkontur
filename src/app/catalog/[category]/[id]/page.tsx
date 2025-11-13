@@ -4,7 +4,7 @@ import Header from "@/components/ui/sections/header";
 import Footer from "@/components/ui/sections/footer";
 import { CTA } from "@/components/ui/sections/cta";
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
-import SectionWrapper from "@/components/ui/sections/section-wrapper";
+import SectionWrapper from "@/components/ui/sections/helper/section-wrapper";
 import ProductDetail from "@/components/pages/catalog/product-detail";
 
 interface ProductPageProps {
