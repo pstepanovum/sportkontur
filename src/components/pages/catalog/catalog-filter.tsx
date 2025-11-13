@@ -2,102 +2,26 @@
 
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import Link from "next/link";
 import { EmptyState } from "./empty-state";
-
-const categories = [
-  {
-    id: "all",
-    name: "Все товары",
-    count: 24,
-  },
-  {
-    id: "playgrounds",
-    name: "Игровые площадки",
-    count: 6,
-    href: "/catalog/playgrounds",
-  },
-  {
-    id: "sports",
-    name: "Спортивное оборудование",
-    count: 6,
-    href: "/catalog/sports",
-  },
-  {
-    id: "furniture",
-    name: "Уличная мебель",
-    count: 6,
-    href: "/catalog/furniture",
-  },
-  {
-    id: "surfaces",
-    name: "Покрытия",
-    count: 6,
-    href: "/catalog/surfaces",
-  },
-];
-
-const products = [
-  {
-    id: "labirint",
-    name: "Лабиринт",
-    category: "playgrounds",
-    article: "Р-11",
-    price: "от 45 000 ₽",
-    image: "/images/hero-playground.jpg",
-    href: "/catalog/playgrounds/labirint",
-  },
-  {
-    id: "castle",
-    name: "Игровой комплекс 'Замок'",
-    category: "playgrounds",
-    article: "Р-22",
-    price: "от 250 000 ₽",
-    image: "/images/cta-playground.jpg",
-    href: "/catalog/playgrounds/castle",
-  },
-  {
-    id: "swing",
-    name: "Качели двойные",
-    category: "playgrounds",
-    article: "Р-33",
-    price: "от 45 000 ₽",
-    image: "/images/hero-playground.jpg",
-    href: "/catalog/playgrounds/swing",
-  },
-  {
-    id: "sandbox",
-    name: "Песочница 'Кораблик'",
-    category: "playgrounds",
-    article: "Р-44",
-    price: "от 35 000 ₽",
-    image: "/images/cta-playground.jpg",
-    href: "/catalog/playgrounds/sandbox",
-  },
-  {
-    id: "slide",
-    name: "Горка спиральная",
-    category: "playgrounds",
-    article: "Р-55",
-    price: "от 55 000 ₽",
-    image: "/images/hero-playground.jpg",
-    href: "/catalog/playgrounds/slide",
-  },
-  {
-    id: "carousel",
-    name: "Карусель 'Ромашка'",
-    category: "playgrounds",
-    article: "Р-66",
-    price: "от 65 000 ₽",
-    image: "/images/cta-playground.jpg",
-    href: "/catalog/playgrounds/carousel",
-  },
-];
+import { categories as baseCategories } from "@/data/categories";
+import { products } from "@/data/products";
 
 export default function CatalogFilter() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("all");
+
+  // Calculate category counts dynamically from products
+  const categoriesWithCounts = useMemo(() => {
+    return baseCategories.map((category) => {
+      const count =
+        category.id === "all"
+          ? products.length
+          : products.filter((p) => p.category === category.id).length;
+      return { ...category, count };
+    });
+  }, []);
 
   const filteredProducts = products.filter((product) => {
     const matchesSearch = product.name
@@ -144,7 +68,7 @@ export default function CatalogFilter() {
                 Категории
               </label>
               <div className="space-y-2">
-                {categories.map((category) => (
+                {categoriesWithCounts.map((category) => (
                   <button
                     key={category.id}
                     onClick={() => setSelectedCategory(category.id)}
@@ -211,7 +135,7 @@ export default function CatalogFilter() {
                   <Link
                     key={product.id}
                     href={product.href}
-                    className="block rounded-2xl overflow-hidden transition-all duration-300 hover:opacity-80 cursor-pointer"
+                    className="block rounded-2xl overflow-hidden transition-colors cursor-pointer"
                     style={{
                       border: "1.5px solid var(--color-border-light)",
                     }}
@@ -238,11 +162,17 @@ export default function CatalogFilter() {
                         Артикул: {product.article}
                       </div>
                       <h3
-                        className="text-xl font-semibold mb-2"
+                        className="text-xl font-semibold mb-3"
                         style={{ color: "var(--color-neutral-100)" }}
                       >
                         {product.name}
                       </h3>
+                      <p
+                        className="text-sm leading-relaxed mb-4"
+                        style={{ color: "var(--color-neutral-60)" }}
+                      >
+                        {product.description}
+                      </p>
                       <div
                         className="text-lg font-bold"
                         style={{ color: "var(--color-primary-main)" }}

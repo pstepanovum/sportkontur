@@ -72,7 +72,7 @@ export function ProductCard({ product }: ProductCardProps) {
     return (
       <Link
         href={product.href}
-        className="block rounded-2xl overflow-hidden transition-all duration-300 hover:opacity-80 cursor-pointer"
+        className="block rounded-2xl overflow-hidden transition-colors cursor-pointer"
         style={{
           border: "1.5px solid var(--color-border-light)",
         }}
@@ -84,7 +84,7 @@ export function ProductCard({ product }: ProductCardProps) {
 
   return (
     <div
-      className="rounded-2xl overflow-hidden transition-all duration-300 hover:opacity-80"
+      className="rounded-2xl overflow-hidden transition-colors"
       style={{
         border: "1.5px solid var(--color-border-light)",
       }}
