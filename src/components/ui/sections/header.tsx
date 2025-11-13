@@ -138,21 +138,14 @@ export default function Header() {
                 ))}
               </div>
 
-              {/* Desktop CTA Buttons - fixed width to match logo side */}
-              <div className="hidden lg:flex items-center justify-end gap-6 flex-shrink-0 w-[240px]">
-                <Link
-                  href="/consultation"
-                  className="font-medium text-base transition-colors duration-300 whitespace-nowrap"
-                  style={{ color: textColor }}
-                >
-                  Консультация
-                </Link>
+              {/* Desktop CTA Button - fixed width to match logo side */}
+              <div className="hidden lg:flex items-center justify-end flex-shrink-0 w-[240px]">
                 <div className="whitespace-nowrap">
                   <Button
-                    href="/request-quote"
+                    href="/contact"
                     className="transition-none hover:brightness-100"
                   >
-                    Запросить расчет
+                    Связаться
                   </Button>
                 </div>
               </div>
