@@ -1,24 +1,26 @@
 // FILE: src/components/pages/about/team/team-values.tsx
 
+import { CheckmarkIcon } from "@/components/icons/features/checkmark-icon";
+
 export default function TeamValues() {
   const values = [
     {
-      icon: "🎯",
+      icon: CheckmarkIcon,
       title: "Профессионализм",
       description: "Высокая квалификация и постоянное развитие каждого специалиста",
     },
     {
-      icon: "🤝",
+      icon: CheckmarkIcon,
       title: "Командная работа",
       description: "Слаженная работа всех отделов для достижения результата",
     },
     {
-      icon: "💡",
+      icon: CheckmarkIcon,
       title: "Инновации",
       description: "Внедрение современных технологий и материалов",
     },
     {
-      icon: "❤️",
+      icon: CheckmarkIcon,
       title: "Ответственность",
       description: "Мы несем ответственность за безопасность детей",
     },
@@ -43,29 +45,37 @@ export default function TeamValues() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {values.map((value, index) => (
-            <div
-              key={index}
-              className="text-center p-6 rounded-2xl"
-              style={{
-                border: "1.5px solid var(--color-border-light)",
-              }}
-            >
-              <div className="text-5xl mb-4">{value.icon}</div>
-              <h3
-                className="text-lg font-semibold mb-2"
-                style={{ color: "var(--color-neutral-100)" }}
+          {values.map((value, index) => {
+            const Icon = value.icon;
+            return (
+              <div
+                key={index}
+                className="text-center p-6 rounded-2xl"
+                style={{
+                  border: "1.5px solid var(--color-border-light)",
+                }}
               >
-                {value.title}
-              </h3>
-              <p
-                className="text-sm leading-relaxed"
-                style={{ color: "var(--color-neutral-60)" }}
-              >
-                {value.description}
-              </p>
-            </div>
-          ))}
+                <div className="flex justify-center mb-4">
+                  <Icon
+                    className="w-16 h-16"
+                    style={{ color: "var(--color-primary-main)" }}
+                  />
+                </div>
+                <h3
+                  className="text-lg font-semibold mb-2"
+                  style={{ color: "var(--color-neutral-100)" }}
+                >
+                  {value.title}
+                </h3>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "var(--color-neutral-60)" }}
+                >
+                  {value.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

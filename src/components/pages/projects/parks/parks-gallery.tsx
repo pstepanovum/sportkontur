@@ -1,5 +1,7 @@
 // FILE: src/components/pages/projects/parks/parks-gallery.tsx
 
+import { ProjectCard } from "../project-card";
+
 const projects = [
   {
     id: 1,
@@ -56,61 +58,7 @@ export default function ParksGallery() {
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {projects.map((project) => (
-            <div
-              key={project.id}
-              className="rounded-2xl overflow-hidden"
-              style={{
-                border: "1.5px solid var(--color-border-light)",
-              }}
-            >
-              <div
-                className="relative h-80 bg-gradient-to-br overflow-hidden"
-                style={{
-                  background: "linear-gradient(135deg, var(--color-primary-surface) 0%, var(--color-neutral-20) 100%)",
-                }}
-              >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div
-                    className="text-8xl"
-                    style={{ color: "var(--color-neutral-40)" }}
-                  >
-                    🌳
-                  </div>
-                </div>
-              </div>
-
-              <div className="p-6">
-                <div className="flex items-center gap-2 mb-2">
-                  <span
-                    className="text-sm font-medium px-3 py-1 rounded-full"
-                    style={{
-                      backgroundColor: "var(--color-primary-surface)",
-                      color: "var(--color-primary-main)",
-                    }}
-                  >
-                    {project.year}
-                  </span>
-                  <span
-                    className="text-sm"
-                    style={{ color: "var(--color-neutral-60)" }}
-                  >
-                    {project.location}
-                  </span>
-                </div>
-                <h3
-                  className="text-xl font-semibold mb-2"
-                  style={{ color: "var(--color-neutral-100)" }}
-                >
-                  {project.title}
-                </h3>
-                <p
-                  className="text-sm leading-relaxed"
-                  style={{ color: "var(--color-neutral-60)" }}
-                >
-                  {project.description}
-                </p>
-              </div>
-            </div>
+            <ProjectCard key={project.id} project={project} />
           ))}
         </div>
       </div>

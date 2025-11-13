@@ -1,24 +1,27 @@
 // FILE: src/components/pages/catalog/playgrounds/playgrounds-features.tsx
 
+import { ShieldIcon } from "@/components/icons/features/shield-icon";
+import { CheckmarkIcon } from "@/components/icons/features/checkmark-icon";
+
 export default function PlaygroundsFeatures() {
   const features = [
     {
-      icon: "🛡️",
+      icon: ShieldIcon,
       title: "Безопасность",
       description: "Все площадки соответствуют ГОСТ и имеют сертификаты качества",
     },
     {
-      icon: "🎨",
+      icon: CheckmarkIcon,
       title: "Яркий дизайн",
       description: "Современный дизайн с использованием ярких, стойких красок",
     },
     {
-      icon: "💪",
+      icon: CheckmarkIcon,
       title: "Прочность",
       description: "Изготовлено из качественных материалов для долгого срока службы",
     },
     {
-      icon: "🔧",
+      icon: CheckmarkIcon,
       title: "Простой монтаж",
       description: "Профессиональная установка с гарантией качества",
     },
@@ -43,29 +46,37 @@ export default function PlaygroundsFeatures() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <div
-              key={index}
-              className="text-center p-6 rounded-2xl"
-              style={{
-                border: "1.5px solid var(--color-border-light)",
-              }}
-            >
-              <div className="text-5xl mb-4">{feature.icon}</div>
-              <h3
-                className="text-lg font-semibold mb-2"
-                style={{ color: "var(--color-neutral-100)" }}
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <div
+                key={index}
+                className="text-center p-6 rounded-2xl"
+                style={{
+                  border: "1.5px solid var(--color-border-light)",
+                }}
               >
-                {feature.title}
-              </h3>
-              <p
-                className="text-sm leading-relaxed"
-                style={{ color: "var(--color-neutral-60)" }}
-              >
-                {feature.description}
-              </p>
-            </div>
-          ))}
+                <div className="flex justify-center mb-4">
+                  <Icon
+                    className="w-16 h-16"
+                    style={{ color: "var(--color-primary-main)" }}
+                  />
+                </div>
+                <h3
+                  className="text-lg font-semibold mb-2"
+                  style={{ color: "var(--color-neutral-100)" }}
+                >
+                  {feature.title}
+                </h3>
+                <p
+                  className="text-sm leading-relaxed"
+                  style={{ color: "var(--color-neutral-60)" }}
+                >
+                  {feature.description}
+                </p>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

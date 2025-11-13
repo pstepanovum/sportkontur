@@ -7,7 +7,9 @@ import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper"
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import CTA from "@/components/ui/sections/cta";
 
-export default function ProductPage({ params }: { params: { id: string } }) {
+export default async function ProductPage({ params }: { params: Promise<{ id: string }> }) {
+  const { id } = await params;
+
   return (
     <>
       <Header />
@@ -15,7 +17,7 @@ export default function ProductPage({ params }: { params: { id: string } }) {
       <BlurWrapper>
         <main>
           <SectionWrapper headerTheme="dark">
-            <ProductDetail productId={params.id} />
+            <ProductDetail productId={id} />
           </SectionWrapper>
 
           <CTA />
