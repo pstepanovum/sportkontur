@@ -4,10 +4,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { PlaygroundIcon } from "@/components/icons/catalog/playground-icon";
-import { SportsIcon } from "@/components/icons/catalog/sports-icon";
-import { FurnitureIcon } from "@/components/icons/catalog/furniture-icon";
-import { SurfaceIcon } from "@/components/icons/catalog/surface-icon";
+import { EmptyState } from "./empty-state";
 
 const categories = [
   {
@@ -114,103 +111,153 @@ export default function CatalogFilter() {
   return (
     <section className="w-full py-16 md:py-24 bg-white">
       <div className="max-w-7xl mx-auto px-5 md:px-20">
-        {/* Search Bar */}
-        <div className="mb-12">
-          <input
-            type="text"
-            placeholder="Поиск по каталогу..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="w-full px-6 py-4 rounded-xl text-base"
-            style={{
-              border: "1.5px solid var(--color-border-light)",
-              color: "var(--color-neutral-100)",
-            }}
-          />
-        </div>
-
-        {/* Category Filter */}
-        <div className="flex flex-wrap gap-3 mb-12">
-          {categories.map((category) => (
-            <button
-              key={category.id}
-              onClick={() => setSelectedCategory(category.id)}
-              className="px-6 py-3 rounded-xl text-sm font-medium transition-colors"
-              style={{
-                backgroundColor:
-                  selectedCategory === category.id
-                    ? "var(--color-primary-main)"
-                    : "var(--color-neutral-20)",
-                color:
-                  selectedCategory === category.id
-                    ? "white"
-                    : "var(--color-neutral-100)",
-              }}
-            >
-              {category.name} ({category.count})
-            </button>
-          ))}
-        </div>
-
-        {/* Products Grid */}
-        {filteredProducts.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {filteredProducts.map((product) => (
-              <Link
-                key={product.id}
-                href={product.href}
-                className="rounded-2xl overflow-hidden transition-all duration-300 hover:opacity-80"
+        <div className="flex flex-col lg:flex-row gap-8">
+          {/* Sidebar Filters */}
+          <aside className="w-full lg:w-64 flex-shrink-0">
+            {/* Search */}
+            <div className="mb-6">
+              <label
+                className="block text-sm font-medium mb-3"
+                style={{ color: "var(--color-neutral-100)" }}
+              >
+                Поиск
+              </label>
+              <input
+                type="text"
+                placeholder="Найти товар..."
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+                className="w-full px-4 py-3 rounded-xl text-base"
                 style={{
                   border: "1.5px solid var(--color-border-light)",
+                  color: "var(--color-neutral-100)",
+                }}
+              />
+            </div>
+
+            {/* Categories */}
+            <div>
+              <label
+                className="block text-sm font-medium mb-3"
+                style={{ color: "var(--color-neutral-100)" }}
+              >
+                Категории
+              </label>
+              <div className="space-y-2">
+                {categories.map((category) => (
+                  <button
+                    key={category.id}
+                    onClick={() => setSelectedCategory(category.id)}
+                    className="w-full text-left px-4 py-3 rounded-xl text-sm font-medium transition-colors cursor-pointer"
+                    style={{
+                      backgroundColor:
+                        selectedCategory === category.id
+                          ? "var(--color-primary-main)"
+                          : "var(--color-neutral-20)",
+                      color:
+                        selectedCategory === category.id
+                          ? "white"
+                          : "var(--color-neutral-100)",
+                    }}
+                  >
+                    <span className="flex items-center justify-between">
+                      <span>{category.name}</span>
+                      <span
+                        className="text-xs"
+                        style={{
+                          opacity: selectedCategory === category.id ? 0.9 : 0.6,
+                        }}
+                      >
+                        {category.count}
+                      </span>
+                    </span>
+                  </button>
+                ))}
+              </div>
+            </div>
+
+            {/* Reset Filters */}
+            {(searchQuery || selectedCategory !== "all") && (
+              <button
+                onClick={() => {
+                  setSearchQuery("");
+                  setSelectedCategory("all");
+                }}
+                className="w-full mt-6 px-4 py-3 rounded-xl text-sm font-medium transition-colors cursor-pointer"
+                style={{
+                  border: "1.5px solid var(--color-border-light)",
+                  color: "var(--color-neutral-100)",
                 }}
               >
-                <div
-                  className="relative h-64 bg-cover bg-center"
-                  style={{
-                    backgroundImage: `url(${product.image})`,
-                  }}
-                >
-                  <div
-                    className="absolute inset-0"
-                    style={{
-                      backgroundColor: "rgba(84, 181, 136, 0.15)",
-                    }}
-                  />
-                </div>
+                Сбросить фильтры
+              </button>
+            )}
+          </aside>
 
-                <div className="p-6">
-                  <div
-                    className="text-xs font-medium mb-2"
-                    style={{ color: "var(--color-neutral-60)" }}
+          {/* Products Grid */}
+          <div className="flex-1">
+            <div className="mb-6">
+              <p
+                className="text-sm"
+                style={{ color: "var(--color-neutral-60)" }}
+              >
+                Найдено товаров: {filteredProducts.length}
+              </p>
+            </div>
+
+            {filteredProducts.length > 0 ? (
+              <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                {filteredProducts.map((product) => (
+                  <Link
+                    key={product.id}
+                    href={product.href}
+                    className="block rounded-2xl overflow-hidden transition-all duration-300 hover:opacity-80 cursor-pointer"
+                    style={{
+                      border: "1.5px solid var(--color-border-light)",
+                    }}
                   >
-                    Артикул: {product.article}
-                  </div>
-                  <h3
-                    className="text-xl font-semibold mb-2"
-                    style={{ color: "var(--color-neutral-100)" }}
-                  >
-                    {product.name}
-                  </h3>
-                  <div
-                    className="text-lg font-bold"
-                    style={{ color: "var(--color-primary-main)" }}
-                  >
-                    {product.price}
-                  </div>
-                </div>
-              </Link>
-            ))}
+                    <div
+                      className="relative h-64 bg-cover bg-center"
+                      style={{
+                        backgroundImage: `url(${product.image})`,
+                      }}
+                    >
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          backgroundColor: "rgba(84, 181, 136, 0.15)",
+                        }}
+                      />
+                    </div>
+
+                    <div className="p-6">
+                      <div
+                        className="text-xs font-medium mb-2"
+                        style={{ color: "var(--color-neutral-60)" }}
+                      >
+                        Артикул: {product.article}
+                      </div>
+                      <h3
+                        className="text-xl font-semibold mb-2"
+                        style={{ color: "var(--color-neutral-100)" }}
+                      >
+                        {product.name}
+                      </h3>
+                      <div
+                        className="text-lg font-bold"
+                        style={{ color: "var(--color-primary-main)" }}
+                      >
+                        {product.price}
+                      </div>
+                    </div>
+                  </Link>
+                ))}
+              </div>
+            ) : (
+              <EmptyState />
+            )}
           </div>
-        ) : (
-          <div className="text-center py-12">
-            <p
-              className="text-lg"
-              style={{ color: "var(--color-neutral-60)" }}
-            >
-              Товары не найдены. Попробуйте изменить параметры поиска.
-            </p>
-          </div>
-        )}
+        </div>
       </div>
     </section>
   );

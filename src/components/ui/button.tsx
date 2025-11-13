@@ -63,7 +63,7 @@ export function Button({
     },
   };
 
-  const baseStyles = `inline-flex items-center justify-center gap-2 rounded-[10px] font-medium transition-all duration-200 ${
+  const baseStyles = `inline-flex items-center justify-center gap-2 rounded-[10px] font-medium transition-all duration-200 cursor-pointer ${
     sizeStyles[size]
   } ${
     disabled ? variantStyles[variant].disabled : variantStyles[variant].default

@@ -24,7 +24,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
       }}
     >
       <div
-        className="relative h-80 bg-cover bg-center overflow-hidden"
+        className="relative h-64 md:h-80 bg-cover bg-center overflow-hidden"
         style={{
           backgroundImage: "url(/images/hero-playground.jpg)",
         }}
@@ -37,13 +37,13 @@ export function ProjectCard({ project }: ProjectCardProps) {
         />
         <div className="absolute inset-0 flex items-center justify-center">
           <BuildingIcon
-            className="w-32 h-32"
+            className="w-24 h-24 md:w-32 md:h-32"
             style={{ color: "var(--color-primary-main)", opacity: 0.3 }}
           />
         </div>
       </div>
 
-      <div className="p-6">
+      <div className="p-5 md:p-6">
         <div className="flex items-center gap-2 mb-2">
           <span
             className="text-sm font-medium px-3 py-1 rounded-full"

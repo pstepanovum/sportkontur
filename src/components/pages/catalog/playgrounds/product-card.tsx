@@ -1,11 +1,14 @@
 // FILE: src/components/pages/catalog/playgrounds/product-card.tsx
 
+import Link from "next/link";
+
 interface Product {
   id: number;
   title: string;
   description: string;
   image: string;
   price: string;
+  href?: string;
 }
 
 interface ProductCardProps {
@@ -13,13 +16,8 @@ interface ProductCardProps {
 }
 
 export function ProductCard({ product }: ProductCardProps) {
-  return (
-    <div
-      className="rounded-2xl overflow-hidden transition-all duration-300 hover:opacity-80"
-      style={{
-        border: "1.5px solid var(--color-border-light)",
-      }}
-    >
+  const CardContent = (
+    <>
       {/* Product Image */}
       <div
         className="relative h-64 bg-cover bg-center overflow-hidden"
@@ -56,17 +54,42 @@ export function ProductCard({ product }: ProductCardProps) {
           >
             {product.price}
           </span>
-          <button
-            className="px-4 py-2 rounded-lg text-sm font-medium transition-colors"
+          <span
+            className="px-4 py-2 rounded-lg text-sm font-medium"
             style={{
               backgroundColor: "var(--color-primary-main)",
               color: "white",
             }}
           >
             Подробнее
-          </button>
+          </span>
         </div>
       </div>
+    </>
+  );
+
+  if (product.href) {
+    return (
+      <Link
+        href={product.href}
+        className="block rounded-2xl overflow-hidden transition-all duration-300 hover:opacity-80 cursor-pointer"
+        style={{
+          border: "1.5px solid var(--color-border-light)",
+        }}
+      >
+        {CardContent}
+      </Link>
+    );
+  }
+
+  return (
+    <div
+      className="rounded-2xl overflow-hidden transition-all duration-300 hover:opacity-80"
+      style={{
+        border: "1.5px solid var(--color-border-light)",
+      }}
+    >
+      {CardContent}
     </div>
   );
 }

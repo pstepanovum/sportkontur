@@ -159,7 +159,7 @@ export default function ProductDetail({ productId }: ProductDetailProps) {
       <div className="px-5 md:px-20 max-w-[1400px] mx-auto w-full">
         {/* Breadcrumbs */}
         <div className="mb-8">
-          <div className="flex items-center gap-2 text-sm">
+          <div className="flex items-center gap-2 text-sm flex-wrap">
             <Link
               href="/"
               className="hover:opacity-70"
@@ -209,7 +209,7 @@ export default function ProductDetail({ productId }: ProductDetailProps) {
               />
             </div>
             {product.images.length > 1 && (
-              <div className="grid grid-cols-3 gap-4">
+              <div className="grid grid-cols-2 sm:grid-cols-3 gap-3 md:gap-4">
                 {product.images.slice(1).map((image: string, index: number) => (
                   <div
                     key={index}
@@ -235,7 +235,6 @@ export default function ProductDetail({ productId }: ProductDetailProps) {
             <h1
               className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6"
               style={{
-                fontFamily: "var(--font-dela-gothic)",
                 color: "var(--color-neutral-100)",
               }}
             >
@@ -319,7 +318,7 @@ export default function ProductDetail({ productId }: ProductDetailProps) {
               </Link>
               <Link href="/contact" className="flex-1">
                 <button
-                  className="w-full px-6 py-3 rounded-xl text-base font-medium transition-colors"
+                  className="w-full px-6 py-3 rounded-xl text-base font-medium transition-colors cursor-pointer"
                   style={{
                     border: "1.5px solid var(--color-primary-main)",
                     color: "var(--color-primary-main)",
