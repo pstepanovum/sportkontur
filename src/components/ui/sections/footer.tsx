@@ -38,10 +38,10 @@ const footerLinks = {
   info: {
     title: "Информация",
     links: [
-      { label: "Цены", href: "/pricing" },
       { label: "Доставка", href: "/delivery" },
-      { label: "Гарантия", href: "/warranty" },
       { label: "Документация", href: "/docs" },
+      { label: "Политика конфиденциальности", href: "/privacy" },
+      { label: "Условия использования", href: "/terms" },
     ],
   },
 };
