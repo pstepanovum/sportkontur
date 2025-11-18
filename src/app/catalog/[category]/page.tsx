@@ -9,9 +9,31 @@ import { PageHero } from "@/components/pages/shared/page-hero";
 import { CategoryProducts } from "@/components/pages/catalog/category-products";
 import { categories } from "@/data/categories";
 import { notFound } from "next/navigation";
+import { generateSEO } from "@/lib/seo";
+import type { Metadata } from "next";
 
 interface CategoryPageProps {
   params: Promise<{ category: string }>;
+}
+
+export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
+  const { category } = await params;
+  const categoryData = categories.find((cat) => cat.id === category);
+
+  if (!categoryData || categoryData.id === "all") {
+    return generateSEO({
+      title: "Категория не найдена",
+      description: "Запрашиваемая категория не найдена в каталоге.",
+      noIndex: true,
+    });
+  }
+
+  return generateSEO({
+    title: `${categoryData.name} - Каталог`,
+    description: categoryData.description || `Каталог товаров категории ${categoryData.name}. Качественное оборудование для детских площадок от производителя в Иркутске.`,
+    keywords: [categoryData.name, "детское оборудование", "купить в Иркутске"],
+    path: `/catalog/${category}`,
+  });
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
