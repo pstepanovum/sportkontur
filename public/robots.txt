@@ -1,0 +1,18 @@
+# robots.txt for sportkontur.ru
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private pages
+Disallow: /admin/
+Disallow: /api/
+Disallow: /_next/
+
+# Allow important pages
+Allow: /catalog/
+Allow: /about/
+Allow: /projects/
+Allow: /contact/
+
+# Sitemap location
+Sitemap: https://sportkontur.ru/sitemap.xml

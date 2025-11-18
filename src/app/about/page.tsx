@@ -10,6 +10,21 @@ import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper"
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import Certificates from "@/components/pages/home/certificates";
 import CTA from "@/components/ui/sections/cta";
+import { generateSEO } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = generateSEO({
+  title: "О компании Спорт Контур - Производитель детских площадок в Иркутске",
+  description: "Компания Спорт Контур - производство и установка детских площадок в Иркутске. Наша история, ценности, команда профессионалов. Качество и безопасность с 2010 года.",
+  keywords: [
+    "о компании спорт контур",
+    "производитель детских площадок Иркутск",
+    "компания детские площадки",
+    "о нас",
+    "производство площадок",
+  ],
+  path: "/about",
+});
 
 export default function AboutPage() {
   return (
