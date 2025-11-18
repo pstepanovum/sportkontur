@@ -5,6 +5,15 @@ import Footer from "@/components/ui/sections/footer";
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import SectionWrapper from "@/components/ui/sections/helper/section-wrapper";
 import { PageHero } from "@/components/pages/shared/page-hero";
+import { generateSEO } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = generateSEO({
+  title: "Условия использования",
+  description: "Правила и условия использования сайта Спорт Контур. Общие условия, оформление заказа, гарантии и ответственность.",
+  path: "/terms",
+  noIndex: true,
+});
 
 export default function TermsPage() {
   return (

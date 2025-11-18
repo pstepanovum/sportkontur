@@ -9,6 +9,21 @@ import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper"
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import FAQ from "@/components/pages/shared/faq";
 import CTA from "@/components/ui/sections/cta";
+import { generateSEO } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = generateSEO({
+  title: "Детские площадки для детских садов - Наши проекты",
+  description: "Проекты детских площадок для детских садов от Спорт Контур. Безопасные, яркие и функциональные площадки для дошкольных учреждений в Иркутске.",
+  keywords: [
+    "детские площадки для детских садов",
+    "площадки для ДОУ",
+    "оборудование для детского сада",
+    "проекты детских садов",
+    "детский сад площадка",
+  ],
+  path: "/projects/kindergartens",
+});
 
 export default function KindergartensPage() {
   return (
