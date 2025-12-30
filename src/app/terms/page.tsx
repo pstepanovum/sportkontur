@@ -3,7 +3,7 @@
 import Header from "@/components/ui/sections/header";
 import Footer from "@/components/ui/sections/footer";
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
-import SectionWrapper from "@/components/ui/sections/helper/section-wrapper";
+import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper";
 import { PageHero } from "@/components/pages/shared/page-hero";
 
 export default function TermsPage() {
@@ -175,7 +175,8 @@ export default function TermsPage() {
                     className="text-sm italic"
                     style={{ color: "var(--color-neutral-60)" }}
                   >
-                    Дата последнего обновления: {new Date().toLocaleDateString("ru-RU")}
+                    Дата последнего обновления:{" "}
+                    {new Date().toLocaleDateString("ru-RU")}
                   </div>
                 </div>
               </div>

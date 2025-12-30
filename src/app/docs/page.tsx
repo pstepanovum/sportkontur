@@ -3,7 +3,7 @@
 import Header from "@/components/ui/sections/header";
 import Footer from "@/components/ui/sections/footer";
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
-import SectionWrapper from "@/components/ui/sections/helper/section-wrapper";
+import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper";
 import { PageHero } from "@/components/pages/shared/page-hero";
 import Link from "next/link";
 
@@ -17,8 +17,7 @@ export default function DocsPage() {
     },
     {
       title: "Технические паспорта",
-      description:
-        "Подробные технические характеристики каждого изделия",
+      description: "Подробные технические характеристики каждого изделия",
       icon: "📋",
     },
     {
@@ -102,7 +101,8 @@ export default function DocsPage() {
                   >
                     Свяжитесь с нашими специалистами, и мы предоставим всю
                     необходимую документацию для интересующего вас оборудования.
-                    Все документы также доступны на страницах товаров в каталоге.
+                    Все документы также доступны на страницах товаров в
+                    каталоге.
                   </p>
                   <Link
                     href="/contact"

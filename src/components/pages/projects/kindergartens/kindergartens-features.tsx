@@ -8,7 +8,8 @@ export default function KindergartensFeatures() {
     {
       icon: CheckmarkIcon,
       title: "Соответствие ФГОС",
-      description: "Все проекты соответствуют требованиям образовательных стандартов",
+      description:
+        "Все проекты соответствуют требованиям образовательных стандартов",
     },
     {
       icon: CheckmarkIcon,
@@ -57,10 +58,7 @@ export default function KindergartensFeatures() {
                 }}
               >
                 <div className="flex justify-center mb-4">
-                  <Icon
-                    className="w-16 h-16"
-                    style={{ color: "var(--color-primary-main)" }}
-                  />
+                  <Icon className="w-16 h-16" />
                 </div>
                 <h3
                   className="text-lg font-semibold mb-2"

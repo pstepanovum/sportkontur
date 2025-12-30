@@ -57,10 +57,7 @@ export default function SurfacesFeatures() {
                 }}
               >
                 <div className="flex justify-center mb-4">
-                  <Icon
-                    className="w-16 h-16"
-                    style={{ color: "var(--color-primary-main)" }}
-                  />
+                  <Icon className="w-16 h-16" />
                 </div>
                 <h3
                   className="text-lg font-semibold mb-2"

@@ -2,9 +2,9 @@
 
 import Header from "@/components/ui/sections/header";
 import Footer from "@/components/ui/sections/footer";
-import { CTA } from "@/components/ui/sections/cta";
+import CTA from "@/components/ui/sections/cta";
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
-import SectionWrapper from "@/components/ui/sections/helper/section-wrapper";
+import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper";
 import { PageHero } from "@/components/pages/shared/page-hero";
 import { CategoryProducts } from "@/components/pages/catalog/category-products";
 import { categories } from "@/data/categories";
@@ -12,6 +12,15 @@ import { notFound } from "next/navigation";
 
 interface CategoryPageProps {
   params: Promise<{ category: string }>;
+}
+
+// Generate static params for all categories (except "all")
+export async function generateStaticParams() {
+  return categories
+    .filter((cat) => cat.id !== "all") // Exclude "all" category
+    .map((category) => ({
+      category: category.id,
+    }));
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {

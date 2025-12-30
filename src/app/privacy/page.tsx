@@ -3,7 +3,7 @@
 import Header from "@/components/ui/sections/header";
 import Footer from "@/components/ui/sections/footer";
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
-import SectionWrapper from "@/components/ui/sections/helper/section-wrapper";
+import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper";
 import { PageHero } from "@/components/pages/shared/page-hero";
 
 export default function PrivacyPage() {
@@ -93,13 +93,15 @@ export default function PrivacyPage() {
                         Идентификации Пользователя для оформления заказа и
                         заключения договора
                       </li>
-                      <li>Предоставления Пользователю доступа к сервисам сайта</li>
+                      <li>
+                        Предоставления Пользователю доступа к сервисам сайта
+                      </li>
                       <li>
                         Связи с Пользователем для получения обратной связи
                       </li>
                       <li>
-                        Обработки и получения платежей, подтверждения налога
-                        или налоговых льгот
+                        Обработки и получения платежей, подтверждения налога или
+                        налоговых льгот
                       </li>
                       <li>
                         Предоставления эффективной клиентской и технической
@@ -139,8 +141,8 @@ export default function PrivacyPage() {
                       className="text-base leading-relaxed mb-4"
                       style={{ color: "var(--color-neutral-60)" }}
                     >
-                      По всем вопросам, связанным с политикой конфиденциальности,
-                      пожалуйста, свяжитесь с нами:
+                      По всем вопросам, связанным с политикой
+                      конфиденциальности, пожалуйста, свяжитесь с нами:
                     </p>
                     <p
                       className="text-base leading-relaxed"
@@ -158,7 +160,8 @@ export default function PrivacyPage() {
                     className="text-sm italic"
                     style={{ color: "var(--color-neutral-60)" }}
                   >
-                    Дата последнего обновления: {new Date().toLocaleDateString("ru-RU")}
+                    Дата последнего обновления:{" "}
+                    {new Date().toLocaleDateString("ru-RU")}
                   </div>
                 </div>
               </div>

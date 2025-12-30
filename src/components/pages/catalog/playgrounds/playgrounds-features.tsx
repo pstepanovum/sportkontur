@@ -8,7 +8,8 @@ export default function PlaygroundsFeatures() {
     {
       icon: ShieldIcon,
       title: "Безопасность",
-      description: "Все площадки соответствуют ГОСТ и имеют сертификаты качества",
+      description:
+        "Все площадки соответствуют ГОСТ и имеют сертификаты качества",
     },
     {
       icon: CheckmarkIcon,
@@ -18,7 +19,8 @@ export default function PlaygroundsFeatures() {
     {
       icon: CheckmarkIcon,
       title: "Прочность",
-      description: "Изготовлено из качественных материалов для долгого срока службы",
+      description:
+        "Изготовлено из качественных материалов для долгого срока службы",
     },
     {
       icon: CheckmarkIcon,
@@ -57,10 +59,7 @@ export default function PlaygroundsFeatures() {
                 }}
               >
                 <div className="flex justify-center mb-4">
-                  <Icon
-                    className="w-16 h-16"
-                    style={{ color: "var(--color-primary-main)" }}
-                  />
+                  <Icon className="w-16 h-16" />
                 </div>
                 <h3
                   className="text-lg font-semibold mb-2"

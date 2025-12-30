@@ -2,7 +2,7 @@
 
 import Header from "@/components/ui/sections/header";
 import ContactSection from "@/components/pages/contact/contact-form";
-import ContactInfo from "@/components/pages/contact/contact-info";  
+import ContactInfo from "@/components/pages/contact/contact-info";
 import Footer from "@/components/ui/sections/footer";
 import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper";
 import { BlurWrapper } from "@/components/ui/blur-wrapper";

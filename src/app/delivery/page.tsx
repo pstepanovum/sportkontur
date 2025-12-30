@@ -3,7 +3,7 @@
 import Header from "@/components/ui/sections/header";
 import Footer from "@/components/ui/sections/footer";
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
-import SectionWrapper from "@/components/ui/sections/helper/section-wrapper";
+import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper";
 import { PageHero } from "@/components/pages/shared/page-hero";
 import { TruckIcon } from "@/components/icons/truck";
 
@@ -65,7 +65,6 @@ export default function DeliveryPage() {
                       <div className="mb-4">
                         <TruckIcon
                           className="w-12 h-12"
-                          style={{ color: "var(--color-primary-main)" }}
                         />
                       </div>
                       <h3
@@ -142,7 +141,9 @@ export default function DeliveryPage() {
                                 backgroundColor: "var(--color-primary-surface)",
                               }}
                             >
-                              <span style={{ color: "var(--color-primary-main)" }}>
+                              <span
+                                style={{ color: "var(--color-primary-main)" }}
+                              >
                                 ✓
                               </span>
                             </div>
@@ -171,8 +172,8 @@ export default function DeliveryPage() {
                         style={{ color: "var(--color-neutral-60)" }}
                       >
                         Сроки монтажа зависят от объема работ и сложности
-                        проекта. Типовая детская площадка устанавливается за
-                        2-3 дня.
+                        проекта. Типовая детская площадка устанавливается за 2-3
+                        дня.
                       </p>
                       <p
                         className="text-base leading-relaxed"

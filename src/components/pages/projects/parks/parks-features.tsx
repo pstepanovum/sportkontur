@@ -7,7 +7,8 @@ export default function ParksFeatures() {
     {
       icon: CheckmarkIcon,
       title: "Ландшафтный дизайн",
-      description: "Гармоничное встраивание оборудования в существующий ландшафт",
+      description:
+        "Гармоничное встраивание оборудования в существующий ландшафт",
     },
     {
       icon: CheckmarkIcon,
@@ -17,7 +18,8 @@ export default function ParksFeatures() {
     {
       icon: CheckmarkIcon,
       title: "Доступная среда",
-      description: "Учет требований доступности для людей с ограниченными возможностями",
+      description:
+        "Учет требований доступности для людей с ограниченными возможностями",
     },
     {
       icon: CheckmarkIcon,
@@ -56,10 +58,7 @@ export default function ParksFeatures() {
                 }}
               >
                 <div className="flex justify-center mb-4">
-                  <Icon
-                    className="w-16 h-16"
-                    style={{ color: "var(--color-primary-main)" }}
-                  />
+                  <Icon className="w-16 h-16" />
                 </div>
                 <h3
                   className="text-lg font-semibold mb-2"

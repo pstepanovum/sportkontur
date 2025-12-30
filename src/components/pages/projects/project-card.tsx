@@ -36,10 +36,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
           }}
         />
         <div className="absolute inset-0 flex items-center justify-center">
-          <BuildingIcon
-            className="w-24 h-24 md:w-32 md:h-32"
-            style={{ color: "var(--color-primary-main)", opacity: 0.3 }}
-          />
+          <BuildingIcon className="w-24 h-24 md:w-32 md:h-32" />
         </div>
       </div>
 

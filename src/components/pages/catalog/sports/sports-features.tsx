@@ -8,7 +8,8 @@ export default function SportsFeatures() {
     {
       icon: CheckmarkIcon,
       title: "Профессиональное качество",
-      description: "Оборудование соответствует стандартам спортивных тренировок",
+      description:
+        "Оборудование соответствует стандартам спортивных тренировок",
     },
     {
       icon: CheckmarkIcon,
@@ -57,10 +58,7 @@ export default function SportsFeatures() {
                 }}
               >
                 <div className="flex justify-center mb-4">
-                  <Icon
-                    className="w-16 h-16"
-                    style={{ color: "var(--color-primary-main)" }}
-                  />
+                  <Icon className="w-16 h-16" />
                 </div>
                 <h3
                   className="text-lg font-semibold mb-2"

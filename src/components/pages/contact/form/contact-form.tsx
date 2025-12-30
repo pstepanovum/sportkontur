@@ -5,6 +5,8 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 
+type FormStatus = "idle" | "loading" | "success" | "error";
+
 export function ContactForm() {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,11 +14,41 @@ export function ContactForm() {
     company: "",
     message: "",
   });
+  const [status, setStatus] = useState<FormStatus>("idle");
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
-    console.log(formData);
+    setStatus("loading");
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("/api/contact.php", {
+        // ← Changed to .php
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setStatus("success");
+        setFormData({ name: "", email: "", company: "", message: "" });
+        setTimeout(() => setStatus("idle"), 5000);
+      } else {
+        setStatus("error");
+        setErrorMessage(data.error || "Произошла ошибка при отправке");
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setStatus("error");
+      setErrorMessage(
+        "Не удалось отправить форму. Проверьте подключение к интернету."
+      );
+    }
   };
 
   const handleChange = (
@@ -46,7 +78,8 @@ export function ContactForm() {
           placeholder="Иван Иванов"
           value={formData.name}
           onChange={handleChange}
-          className="w-full px-4 py-3 transition-colors duration-200 shadow-sm"
+          disabled={status === "loading"}
+          className="w-full px-4 py-3 transition-colors duration-200 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
           style={{
             borderRadius: "10px",
             border: "1px solid var(--color-border-light)",
@@ -73,7 +106,8 @@ export function ContactForm() {
           placeholder="email@компания.com"
           value={formData.email}
           onChange={handleChange}
-          className="w-full px-4 py-3 transition-colors duration-200 shadow-sm"
+          disabled={status === "loading"}
+          className="w-full px-4 py-3 transition-colors duration-200 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
           style={{
             borderRadius: "10px",
             border: "1px solid var(--color-border-light)",
@@ -99,7 +133,8 @@ export function ContactForm() {
           placeholder="Название компании"
           value={formData.company}
           onChange={handleChange}
-          className="w-full px-4 py-3 transition-colors duration-200 shadow-sm"
+          disabled={status === "loading"}
+          className="w-full px-4 py-3 transition-colors duration-200 shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
           style={{
             borderRadius: "10px",
             border: "1px solid var(--color-border-light)",
@@ -126,7 +161,8 @@ export function ContactForm() {
           placeholder="Расскажите нам о ваших потребностях..."
           value={formData.message}
           onChange={handleChange}
-          className="w-full px-4 py-3 transition-colors duration-200 resize-none shadow-sm"
+          disabled={status === "loading"}
+          className="w-full px-4 py-3 transition-colors duration-200 resize-none shadow-sm disabled:opacity-50 disabled:cursor-not-allowed"
           style={{
             borderRadius: "10px",
             border: "1px solid var(--color-border-light)",
@@ -137,8 +173,44 @@ export function ContactForm() {
         />
       </div>
 
-      <Button type="submit" size="lg" className="w-full">
-        Отправить сообщение
+      {status === "success" && (
+        <div
+          className="p-4 rounded-lg border"
+          style={{
+            backgroundColor: "#f0fdf4",
+            borderColor: "#86efac",
+          }}
+        >
+          <p style={{ color: "#166534" }}>
+            ✅ Спасибо! Ваше сообщение успешно отправлено. Мы свяжемся с вами в
+            ближайшее время.
+          </p>
+        </div>
+      )}
+
+      {status === "error" && (
+        <div
+          className="p-4 rounded-lg border"
+          style={{
+            backgroundColor: "#fef2f2",
+            borderColor: "#fca5a5",
+          }}
+        >
+          <p style={{ color: "#991b1b" }}>
+            ❌{" "}
+            {errorMessage ||
+              "Произошла ошибка при отправке. Пожалуйста, попробуйте позже или свяжитесь с нами по телефону."}
+          </p>
+        </div>
+      )}
+
+      <Button
+        size="lg"
+        className="w-full"
+        disabled={status === "loading"}
+        type="submit"
+      >
+        {status === "loading" ? "Отправка..." : "Отправить сообщение"}
       </Button>
     </form>
   );

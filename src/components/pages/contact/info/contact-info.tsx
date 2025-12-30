@@ -46,7 +46,8 @@ export function ContactInfo() {
           className="text-base leading-relaxed"
           style={{ color: "var(--color-neutral-60)" }}
         >
-          Мы всегда готовы ответить на ваши вопросы и помочь с выбором оборудования.
+          Мы всегда готовы ответить на ваши вопросы и помочь с выбором
+          оборудования.
         </p>
       </div>
 
@@ -59,11 +60,7 @@ export function ContactInfo() {
                 className="flex-shrink-0 w-12 h-12 rounded-lg flex items-start pt-1 justify-center"
                 style={{ backgroundColor: "var(--color-neutral-10)" }}
               >
-                <Icon
-                  width={20}
-                  height={20}
-                  color="var(--color-primary)"
-                />
+                <Icon width={20} height={20} color="var(--color-primary)" />
               </div>
               <div>
                 <p

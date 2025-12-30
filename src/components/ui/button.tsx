@@ -14,6 +14,7 @@ interface ButtonProps {
   iconTrailing?: boolean;
   disabled?: boolean;
   className?: string;
+  type?: "button" | "submit" | "reset"; // Add this line
 }
 
 export function Button({
@@ -27,6 +28,7 @@ export function Button({
   iconTrailing = true,
   disabled = false,
   className = "",
+  type = "button", // Add this line with default value
 }: ButtonProps) {
   // Size styles
   const sizeStyles = {
@@ -92,7 +94,12 @@ export function Button({
   }
 
   return (
-    <button onClick={onClick} disabled={disabled} className={baseStyles}>
+    <button
+      type={type} // Add this line
+      onClick={onClick}
+      disabled={disabled}
+      className={baseStyles}
+    >
       {content}
     </button>
   );

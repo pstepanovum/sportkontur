@@ -19,7 +19,7 @@ export function HeroContent() {
         className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 text-white"
         style={{ fontFamily: "var(--font-dela-gothic)" }}
       >
-        Веселье для каждого
+        Веселье для каждого!
       </h1>
 
       {/* Subheading */}

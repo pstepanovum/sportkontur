@@ -8,7 +8,8 @@ export default function SchoolsFeatures() {
     {
       icon: CheckmarkIcon,
       title: "Мультиспорт",
-      description: "Площадки для различных видов спорта: футбол, баскетбол, волейбол",
+      description:
+        "Площадки для различных видов спорта: футбол, баскетбол, волейбол",
     },
     {
       icon: CheckmarkIcon,
@@ -57,10 +58,7 @@ export default function SchoolsFeatures() {
                 }}
               >
                 <div className="flex justify-center mb-4">
-                  <Icon
-                    className="w-16 h-16"
-                    style={{ color: "var(--color-primary-main)" }}
-                  />
+                  <Icon className="w-16 h-16" />
                 </div>
                 <h3
                   className="text-lg font-semibold mb-2"
