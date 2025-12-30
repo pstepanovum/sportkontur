@@ -6,6 +6,21 @@ import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper";
 import { PageHero } from "@/components/pages/shared/page-hero";
 import { TruckIcon } from "@/components/icons/truck";
+import { generateSEO } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = generateSEO({
+  title: "Доставка и монтаж детских площадок - Спорт Контур",
+  description: "Доставка и профессиональный монтаж детских площадок в Иркутске и по всей России. Бесплатная доставка от 50 000 ₽. Гарантия на монтажные работы.",
+  keywords: [
+    "доставка детских площадок",
+    "монтаж детских площадок",
+    "установка оборудования",
+    "доставка Иркутск",
+    "монтаж под ключ",
+  ],
+  path: "/delivery",
+});
 
 export default function DeliveryPage() {
   const deliveryOptions = [

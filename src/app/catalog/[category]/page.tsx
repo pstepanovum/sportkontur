@@ -9,6 +9,8 @@ import { PageHero } from "@/components/pages/shared/page-hero";
 import { CategoryProducts } from "@/components/pages/catalog/category-products";
 import { categories } from "@/data/categories";
 import { notFound } from "next/navigation";
+import { generateSEO } from "@/lib/seo";
+import type { Metadata } from "next";
 
 interface CategoryPageProps {
   params: Promise<{ category: string }>;

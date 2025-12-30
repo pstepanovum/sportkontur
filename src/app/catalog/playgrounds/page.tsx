@@ -9,6 +9,22 @@ import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper"
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import FAQ from "@/components/pages/shared/faq";
 import CTA from "@/components/ui/sections/cta";
+import { generateSEO } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = generateSEO({
+  title: "Игровые комплексы для детей - Каталог детских площадок",
+  description: "Детские игровые комплексы и площадки производства Спорт Контур. Горки, качели, песочницы, домики и многофункциональные игровые комплексы. Безопасность и качество.",
+  keywords: [
+    "игровые комплексы для детей",
+    "детские площадки купить",
+    "детские горки",
+    "качели для детей",
+    "песочницы детские",
+    "домики игровые",
+  ],
+  path: "/catalog/playgrounds",
+});
 
 export default function PlaygroundsPage() {
   return (

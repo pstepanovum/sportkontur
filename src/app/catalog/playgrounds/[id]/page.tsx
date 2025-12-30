@@ -42,6 +42,27 @@ export default async function ProductPage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
+  const product = products.find((p) => p.id === id);
+
+  if (!product) {
+    return null;
+  }
+
+  const productSchema = getProductSchema({
+    name: product.name,
+    description: product.description,
+    price: parseInt(product.price.replace(/\D/g, "")) || 0,
+    image: product.image,
+    articleNumber: product.article,
+    category: product.category,
+  });
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: "Главная", url: "/" },
+    { name: "Каталог", url: "/catalog" },
+    { name: "Игровые комплексы", url: "/catalog/playgrounds" },
+    { name: product.name, url: `/catalog/playgrounds/${id}` },
+  ]);
 
   return (
     <>
@@ -55,6 +76,20 @@ export default async function ProductPage({
           <Footer />
         </main>
       </BlurWrapper>
+
+      {/* JSON-LD Structured Data */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(productSchema),
+        }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(breadcrumbSchema),
+        }}
+      />
     </>
   );
 }

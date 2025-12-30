@@ -8,6 +8,21 @@ import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper"
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import FAQ from "@/components/pages/shared/faq";
 import CTA from "@/components/ui/sections/cta";
+import { generateSEO, getLocalBusinessSchema } from "@/lib/seo";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = generateSEO({
+  title: "Контакты - Спорт Контур Иркутск",
+  description: "Контактная информация компании Спорт Контур. Адрес, телефон, email. Свяжитесь с нами для заказа детских площадок и спортивного оборудования в Иркутске.",
+  keywords: [
+    "контакты спорт контур",
+    "телефон",
+    "адрес Иркутск",
+    "связаться с нами",
+    "офис продаж",
+  ],
+  path: "/contact",
+});
 
 export default function ContactPage() {
   return (
