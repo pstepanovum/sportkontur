@@ -9,21 +9,6 @@ import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper"
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import FAQ from "@/components/pages/shared/faq";
 import CTA from "@/components/ui/sections/cta";
-import { generateSEO } from "@/lib/seo";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = generateSEO({
-  title: "Детские площадки для парков - Наши проекты",
-  description: "Проекты детских площадок для парков и общественных пространств от Спорт Контур. Современные, безопасные и привлекательные игровые зоны в Иркутске.",
-  keywords: [
-    "детские площадки для парков",
-    "площадки в парках",
-    "общественные площадки",
-    "проекты парков",
-    "парковая площадка",
-  ],
-  path: "/projects/parks",
-});
 
 export default function ParksPage() {
   return (

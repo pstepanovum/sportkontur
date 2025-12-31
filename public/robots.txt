@@ -14,5 +14,3 @@ Allow: /about/
 Allow: /projects/
 Allow: /contact/
 
-# Sitemap location
-Sitemap: https://sportkontur.ru/sitemap.xml

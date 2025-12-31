@@ -6,21 +6,6 @@ import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper";
 import { PageHero } from "@/components/pages/shared/page-hero";
 import Link from "next/link";
-import { generateSEO } from "@/lib/seo";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = generateSEO({
-  title: "Документация - Сертификаты и техническая документация",
-  description: "Сертификаты соответствия ГОСТ, технические паспорта, инструкции по монтажу и эксплуатации детских площадок. Вся необходимая документация от Спорт Контур.",
-  keywords: [
-    "сертификаты детские площадки",
-    "документация",
-    "технические паспорта",
-    "инструкции по монтажу",
-    "ГОСТ",
-  ],
-  path: "/docs",
-});
 
 export default function DocsPage() {
   const documents = [

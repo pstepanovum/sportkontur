@@ -9,22 +9,6 @@ import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper"
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import FAQ from "@/components/pages/shared/faq";
 import CTA from "@/components/ui/sections/cta";
-import { generateSEO } from "@/lib/seo";
-import type { Metadata } from "next";
-
-export const metadata: Metadata = generateSEO({
-  title: "Спортивное оборудование для детей - Уличные тренажеры",
-  description: "Детское спортивное оборудование для улицы. Спортивные комплексы, турники, рукоходы, шведские стенки. Оборудование для школ, детских садов и дворов.",
-  keywords: [
-    "спортивное оборудование для детей",
-    "уличные тренажеры",
-    "детские турники",
-    "спортивные комплексы улица",
-    "рукоходы детские",
-    "шведская стенка уличная",
-  ],
-  path: "/catalog/sports",
-});
 
 export default function SportsPage() {
   return (

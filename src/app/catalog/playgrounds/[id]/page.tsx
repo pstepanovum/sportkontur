@@ -7,7 +7,6 @@ import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper"
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import CTA from "@/components/ui/sections/cta";
 import { products } from "@/data/products";
-import { getBreadcrumbSchema, getProductSchema } from "@/lib/seo";
 
 // Generate static params for all playground-related products
 export async function generateStaticParams() {
@@ -49,22 +48,6 @@ export default async function ProductPage({
     return null;
   }
 
-  const productSchema = getProductSchema({
-    name: product.name,
-    description: product.description,
-    price: parseInt(product.price.replace(/\D/g, "")) || 0,
-    image: product.image,
-    articleNumber: product.article,
-    category: product.category,
-  });
-
-  const breadcrumbSchema = getBreadcrumbSchema([
-    { name: "Главная", url: "/" },
-    { name: "Каталог", url: "/catalog" },
-    { name: "Игровые комплексы", url: "/catalog/playgrounds" },
-    { name: product.name, url: `/catalog/playgrounds/${id}` },
-  ]);
-
   return (
     <>
       <Header />
@@ -77,20 +60,6 @@ export default async function ProductPage({
           <Footer />
         </main>
       </BlurWrapper>
-
-      {/* JSON-LD Structured Data */}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(productSchema),
-        }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify(breadcrumbSchema),
-        }}
-      />
     </>
   );
 }
