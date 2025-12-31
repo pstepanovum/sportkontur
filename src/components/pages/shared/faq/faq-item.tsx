@@ -78,7 +78,7 @@ export function FaqItem({ question, answer, isOpen, onToggle }: FaqItemProps) {
           isOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
         }`}
       >
-        <div className="relative px-6 md:px-8 pb-6">
+        <div className="relative px-6 md:px-6 pb-6">
           <p
             className="text-base leading-relaxed"
             style={{ color: "rgba(255, 255, 255, 0.9)" }}

@@ -24,8 +24,8 @@ export function HeroContent() {
 
       {/* Subheading */}
       <p className="text-lg md:text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-        Создаем безопасные и качественные игровые площадки для детей по всей
-        России
+        Создаем безопасные и качественные игровые площадки для детей в г.
+        Иркутске и Иркутской области
       </p>
 
       {/* Buttons */}

@@ -79,18 +79,18 @@ export default function Footer() {
               <Logo width={100} height={34} />
               <div className="mt-4 space-y-2">
                 <a
-                  href="mailto:info@sportkontur.ru"
+                  href="mailto:sportkontur@yandex.ru"
                   className="block text-sm hover:opacity-70"
                   style={{ color: "var(--color-neutral-100)" }}
                 >
-                  info@sportkontur.ru
+                  sportkontur@yandex.ru
                 </a>
                 <a
-                  href="tel:+79001234567"
+                  href="tel:+73952404029"
                   className="block text-sm hover:opacity-70"
                   style={{ color: "var(--color-neutral-100)" }}
                 >
-                  +7 (900) 123-45-67
+                  8 (3952) 40-40-29
                 </a>
               </div>
             </div>
@@ -189,9 +189,7 @@ export default function Footer() {
           </div>
 
           {/* Bottom Section - Copyright */}
-          <div
-            className="pt-8"
-          >
+          <div className="pt-8">
             <p
               className="text-sm text-center md:text-left"
               style={{ color: "var(--color-neutral-60)" }}

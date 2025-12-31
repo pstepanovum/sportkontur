@@ -14,11 +14,6 @@ const faqs = [
       "Срок производства зависит от сложности проекта и составляет от 2 до 6 недель. После согласования проекта мы предоставим точные сроки изготовления и монтажа оборудования.",
   },
   {
-    question: "Какие гарантии вы предоставляете?",
-    answer:
-      "Мы предоставляем 5 лет гарантии на все производимое оборудование. В течение гарантийного срока осуществляем бесплатное обслуживание и замену комплектующих при необходимости.",
-  },
-  {
     question: "Можно ли создать индивидуальный проект?",
     answer:
       "Да, мы специализируемся на индивидуальных проектах. Наши дизайнеры разработают уникальную площадку с учетом ваших пожеланий, возраста детей и особенностей территории.",
@@ -54,7 +49,7 @@ export default function Faq() {
 
   return (
     <section className="w-full py-6 md:py-14 bg-white">
-      <div className="max-w-4xl mx-auto px-6 md:px-12">
+      <div className="max-w-6xl mx-auto px-6 md:px-12">
         {/* Section Header */}
         <div className="text-center mb-12 md:mb-16">
           <div className="flex justify-center mb-6">
@@ -79,7 +74,7 @@ export default function Faq() {
 
         {/* FAQ Items Container */}
         <div
-          className="rounded-[20px] p-12 md:p-6"
+          className="rounded-[20px] p-6 md:p-2"
           style={{
             backgroundColor: "var(--color-neutral-20)",
             border: "1.5px solid var(--color-border-light)",

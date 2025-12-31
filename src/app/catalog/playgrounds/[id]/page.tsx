@@ -7,6 +7,7 @@ import { SectionWrapper } from "@/components/ui/sections/helper/section-wrapper"
 import { BlurWrapper } from "@/components/ui/blur-wrapper";
 import CTA from "@/components/ui/sections/cta";
 import { products } from "@/data/products";
+import { getBreadcrumbSchema, getProductSchema } from "@/lib/seo";
 
 // Generate static params for all playground-related products
 export async function generateStaticParams() {

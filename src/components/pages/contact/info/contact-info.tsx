@@ -8,26 +8,30 @@ import { ClockIcon } from "@/components/icons/clock";
 const contactDetails = [
   {
     icon: PhoneIcon,
-    label: "Телефон",
-    value: "+7 (495) 123-45-67",
-    link: "tel:+74951234567",
+    label: "Телефоны",
+    value: "8 (3952) 40-40-29",
+    secondaryValue: "8-902-512-60-29",
+    link: "tel:+73952404029",
+    secondaryLink: "tel:+79025126029",
   },
   {
     icon: MailIcon,
     label: "Email",
-    value: "info@sport-kontur.ru",
-    link: "mailto:info@sport-kontur.ru",
+    value: "sportkontur@yandex.ru",
+    link: "mailto:sportkontur@yandex.ru",
   },
   {
     icon: MapPinIcon,
     label: "Адрес",
-    value: "Москва, ул. Примерная, д. 123",
+    value: "г. Иркутск, ул. Рабочего Штаба, д. 30",
     link: null,
   },
   {
     icon: ClockIcon,
-    label: "Время работы",
-    value: "Пн-Пт: 9:00 - 18:00",
+    label: "Режим работы",
+    value: "Пн. – Пт.: с 8:30 до 18:00",
+    secondaryValue: "Сб.: с 8:30 до 12:00",
+    tertiaryValue: "Выходные: Вс",
     link: null,
   },
 ];
@@ -69,22 +73,49 @@ export function ContactInfo() {
                 >
                   {detail.label}
                 </p>
-                {detail.link ? (
-                  <a
-                    href={detail.link}
-                    className="text-base font-medium hover:opacity-80 transition-opacity"
-                    style={{ color: "var(--color-neutral-100)" }}
-                  >
-                    {detail.value}
-                  </a>
-                ) : (
-                  <p
-                    className="text-base font-medium"
-                    style={{ color: "var(--color-neutral-100)" }}
-                  >
-                    {detail.value}
-                  </p>
-                )}
+                <div className="space-y-1">
+                  {detail.link ? (
+                    <a
+                      href={detail.link}
+                      className="block text-base font-medium hover:opacity-80 transition-opacity"
+                      style={{ color: "var(--color-neutral-100)" }}
+                    >
+                      {detail.value}
+                    </a>
+                  ) : (
+                    <p
+                      className="text-base font-medium"
+                      style={{ color: "var(--color-neutral-100)" }}
+                    >
+                      {detail.value}
+                    </p>
+                  )}
+                  {detail.secondaryValue &&
+                    (detail.secondaryLink ? (
+                      <a
+                        href={detail.secondaryLink}
+                        className="block text-base font-medium hover:opacity-80 transition-opacity"
+                        style={{ color: "var(--color-neutral-100)" }}
+                      >
+                        {detail.secondaryValue}
+                      </a>
+                    ) : (
+                      <p
+                        className="text-base font-medium"
+                        style={{ color: "var(--color-neutral-100)" }}
+                      >
+                        {detail.secondaryValue}
+                      </p>
+                    ))}
+                  {detail.tertiaryValue && (
+                    <p
+                      className="text-base font-medium"
+                      style={{ color: "var(--color-neutral-100)" }}
+                    >
+                      {detail.tertiaryValue}
+                    </p>
+                  )}
+                </div>
               </div>
             </div>
           );

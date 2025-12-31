@@ -76,7 +76,7 @@ export default function Header() {
   return (
     <>
       {/* Announcement Banner */}
-      <AnnouncementBanner message="Специальное предложение: скидка 20% на все игровые комплексы — ограниченное время!" />
+      <AnnouncementBanner message="Бесплатная консультация по подбору оборудования" />
 
       {/* Header - absolute positioning, stays at top */}
       <header
